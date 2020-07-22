@@ -19,6 +19,8 @@ header {
     text-align: center;
     box-sizing: border-box; 
 }
+
+/* Links superiores que serão clicados, (Instructors e Members) */
 .links {
     font-size: 22px;
 }
@@ -50,9 +52,10 @@ header {
 }
 .links a:hover::after {
     width: 100%;
-    transition: width 350ms cubic-bezier(0.3, 0.06, 0.72, 0.93); 
+    transition: width 350ms cubic-bezier(0.3, 0.06, 0.72, 0.93); /* responsável pelo tracinho em baixo demorar p aparecer, na largura, tempo que vai demorar e qual a "curva" que vai percorrer */
 }
 
+/* Cartão - Divisão, conteúdo e animações */
 .card {
     background-color: white;
     width: 800px;
@@ -71,7 +74,7 @@ header {
     animation-timing-function: ease-out;
 
 }
-
+/* o keyframes serve para as animações, nesse caso tenho uma animação com o nome: up */
 @keyframes up {
     from {
         opacity: 0;
@@ -96,12 +99,12 @@ header {
     padding: 16px 0;
 }
 
-.details .item:last-child {
+.details .item:last-child { /* vai pegar o último filho, nesse caso a última div que contem o desde */
     border: none;
 }
 
 .details h3,
-.details .item div:nth-child(1) {
+.details .item div:nth-child(1) { /* dentro do item, vai pegar a div filha número um, nesse caso é nome, idade, sexo..*/
     font-size: 14px;
     line-height: 24px;
     color: #777;
@@ -110,7 +113,7 @@ header {
     
 }
 
-.details .item div:nth-child(2) {
+.details .item div:nth-child(2) { /* dentro do item, vai pegar a div filha número dois, nesse caso é guilherme silva, 29, masculino..*/
     color: #555;
     font-weight: bold;
     font-size: 18px;
@@ -122,7 +125,7 @@ header {
     color: var(--primary-color)
 }
 
-.details .item div:nth-child(2) span {
+.details .item div:nth-child(2) span { /* vai pegar o span que está dentro da div da filha de numero dois - nesse caso só temos um elemento assim, que fica mais facil pra estilizar */
     padding: 8px 16px;
     background-color: var(--second-color);
     border-radius: 18px;
@@ -133,4 +136,32 @@ header {
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+
+/*Formulário*/
+input {
+    width: 100%;
+    outline: none; 
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    padding: 8px 32px;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    margin-top: 16px;
+    width: 100%;
 }
