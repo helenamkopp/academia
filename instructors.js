@@ -1,12 +1,32 @@
 const fs = require('fs')
+const data = require('./data.json')
 
-// função para create
+// função que está mostrando
+exports.show = function(req, res) {
+
+    const { id } = req.params
+
+    const foundInstructor = data.instructors.find(function(instructor){
+        return instructor.id == id
+    })
+
+    if (!foundInstructor) return res.send("Instructor not found!")
+
+    const instructor = {
+        ...foundInstructor,
+        age: "",
+        services: foundInstructor.services.split(","),
+        created_at: ""
+    }
+
+    return res.render("instructors/show", { instructor })
+}
+
+
+// função que está criando 
 exports.post = function(req, res) {
-    // req.query - quando eu precisei pegar o id da minha receita no foodfy (pq foi uma requisiçao get)
-    // req.body - (aqui faz sentido pq estou fazendo uma requisição post)
 
-    const keys = Object.keys(req.body) /* código que verifica se todos os campos estão preenchidos */
-
+    const keys = Object.keys(req.body) 
     for ( key of keys ) {
 
         if (req.body[key] == "") {
@@ -14,14 +34,30 @@ exports.post = function(req, res) {
         }   
     }
 
+    let {avatar_url, birth, name, services, gender} = req.body
 
-    fs.writeFile("data.json", JSON.stringify(req.body), function(err){ // importante colocar uma callback function para nao bloquear o app
+    birth = Date.parse(birth) 
+    const created_at = Date.now()
+    const id = Number(data.instructors.length + 1)
+
+
+    data.instructors.push({
+        avatar_url,
+        birth,
+        created_at,
+        id,
+        gender,
+        services,
+        name
+    }) 
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){ 
         if (err) return res.send("Write file error")
 
         return res.redirect("/instructors")
     }) 
 
-    return res.send(req.body)
+    // return res.send(req.body)
 }
 
 
@@ -35,10 +71,5 @@ exports.post = function(req, res) {
 
 
 
-
-
-// função para update
-
-// função para delete
 
 
