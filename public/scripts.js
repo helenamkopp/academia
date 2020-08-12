@@ -1,10 +1,11 @@
-const modalOverlay = document.querySelector('.modal-overlay');
-const cards = document.querySelectorAll('.card');
+//essa lógica deixa a página atual "marcada"!! - pede em alguns desafios!
+//ele ta indo la no layout.njk e comparando os dois nomes 
+// ele vai manter marcado inclusive nas páginas 'filhas'
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("header .links a")
 
-for(let card of cards) {
-    card.addEventListener("click", function(){
-        const videoId = card.getAttribute("id")
-        window.location.href = `/video?id=${videoId}`
-    })
+for (item of menuItems) {
+    if (currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("active")
+    }
 }
-

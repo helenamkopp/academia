@@ -1,49 +1,37 @@
 {
-  "instructors": [
+  "members": [
     {
-      "id": 1,
-      "avatar_url": "https://www.google.com.br/maps",
-      "name": "Paula",
-      "birth": 793065600000,
+      "avatar_url": "https://images.unsplash.com/photo-1597221532512-28480a15bc94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "Luiza Silva",
+      "email": "luiza@email.com",
+      "birth": 912297600000,
       "gender": "F",
-      "services": "Yoga",
-      "created_at": 1597164736040
+      "blood": "B+",
+      "weight": "57",
+      "height": "170",
+      "id": 1
     },
     {
+      "avatar_url": "https://images.unsplash.com/photo-1597243055498-08f3fabfda4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+      "name": "Maria Silva",
+      "email": "maria@email.com",
+      "birth": 789782400000,
+      "gender": "F",
+      "blood": "O-",
+      "weight": "52",
+      "height": "165",
+      "id": 2
+    }
+  ],
+  "instructors": [
+    {
       "id": 2,
-      "avatar_url": "https://source.unsplash.com/collection/10552289/500x500",
+      "avatar_url": "https://cdn.pixabay.com/photo/2017/11/23/03/17/christmas-2971961__340.jpg",
       "name": "Helena",
       "birth": 817603200000,
       "gender": "F",
       "services": "Fitdance",
       "created_at": 1597164772653
-    },
-    {
-      "id": 3,
-      "avatar_url": "http://google.com",
-      "name": "testee",
-      "birth": 791337600000,
-      "gender": "F",
-      "services": "uqhuhw, uwqhuwq, ",
-      "created_at": 1597167463061
-    },
-    {
-      "id": 4,
-      "avatar_url": "https://www.google.com.br/maps",
-      "name": "Romulo",
-      "birth": 752284800000,
-      "gender": "M",
-      "services": "Boxe",
-      "created_at": 1597171349948
-    },
-    {
-      "id": 5,
-      "avatar_url": "https://www.google.com.br/maps",
-      "name": "Romulo Thiago",
-      "birth": 752457600000,
-      "gender": "M",
-      "services": "Boxe, Ntaação",
-      "created_at": 1597171414230
     }
   ]
 }

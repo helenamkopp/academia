@@ -1,39 +1,33 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<div class="card">
-    <section class="avatar" style="background: url() no-repeat center center / cover "></section>
-    <section class="details">
-        <h3>Profissional</h3>
+  <div class="card table-container">
+    <a href="/instructors/create">Novo</a>
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Instrutor</th>
+          <th>Atendimento</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
 
-        <div class="item">
-            <div>Nome</div>
-            <div>Guilherme Silva</div>
-        </div>
+        {% for instructor in instructors %}
+          <tr>
+            <td>
+              <span style="background-image: url({{instructor.avatar_url}})"></span>
+              {{instructor.name}}
+            </td>
+            <td>{{instructor.services}}</td>
+            <td>
+              <a href="/instructors/{{instructor.id}}">ver</a>
+            </td>
+          </tr>
+        {% endfor %}
 
-        <div class="item">
-            <div>Idade</div>
-            <div>29</div>
-        </div>
+      </tbody>
+    </table>
 
-        <div class="item">
-            <div>Sexo</div>
-            <div>Masculino</div>
-        </div>
-
-        <div class="item">
-            <div>Atividades</div>
-            <div>
-                <span>Musculação</span>
-                <span>HITT</span>
-            </div>
-        </div>
-
-         <div class="item">
-            <div>Desde</div>
-            <div>01/01/2020</div>
-        </div>
-
-    </section>
-</div>
+  </div>
 {% endblock content %}
