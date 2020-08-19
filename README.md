@@ -80,6 +80,23 @@ Após cadastrado, cada professor/aluno possui o seu id, por enquanto visível no
   <img src="./images/endereco.png" title="Exemplo de endereço">
 </p>
 
+Selecionado a página:
+<p align="center">
+  <img src="./images/paginação.png" title="Número de paginas">
+</p>
+
+Observando a quantidade de alunos de cada professor:
+<p align="center">
+  <img src="./images/qtdalunos.png" title="Quantidade de alunos por professor">
+</p>
+
+
+Filtro de busca nas paginas de membros e instrutores:
+<p align="center">
+  <img src="./images/filtro.png" title="Filtros">
+</p>
+
+
 
 ## Erros
 Como a aplicação ainda está em desenvolvimento e terá novas versões, é possível encontrar alguns bugs. 
